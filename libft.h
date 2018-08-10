@@ -6,7 +6,7 @@
 /*   By: sgrindhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 04:20:47 by sgrindhe          #+#    #+#             */
-/*   Updated: 2018/08/08 22:02:11 by sgrindhe         ###   ########.fr       */
+/*   Updated: 2018/08/09 21:31:39 by sgrindhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_2d_int_array		*ft_map_2d_int_array(t_2d_int_array *t_2darray, int (*f)(int));
+t_2d_int_array		*ft_map_2d_int_array(t_2d_int_array *t_2darray,
+					int (*f)(int));
 t_2d_int_array		*ft_2d_int_array(unsigned int width, unsigned int height);
 char				**ft_map_2d_char_array(char **array, char (*f)(char));
 char				**ft_2d_char_array(unsigned int width, unsigned int height);
