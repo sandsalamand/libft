@@ -6,36 +6,48 @@
 /*   By: sgrindhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/04 23:27:15 by sgrindhe          #+#    #+#             */
-/*   Updated: 2018/08/05 21:36:58 by sgrindhe         ###   ########.fr       */
+/*   Updated: 2018/08/09 22:37:24 by sgrindhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_cntwrd(char const *s, char c)
+static int			ft_count_word(char const *s, char c)
 {
 	unsigned int	i;
-	int				cntr;
+	int				counter;
 
 	i = 0;
-	cntr = 0;
+	counter = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		if (s[i] != '\0')
-			cntr++;
+			counter++;
 		while (s[i] && (s[i] != c))
 			i++;
 	}
-	return (cntr);
+	return (counter);
+}
+
+static char			**prelim_checks(char const *s, char c)
+{
+	char **tab;
+
+	if (!s)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (ft_count_word(s, c)) + 1);
+	if (tab == NULL)
+		return (NULL);
+	return (tab);
 }
 
 static char			*ft_strndup(const char *s, size_t n)
 {
 	char			*str;
 
-	str = (char *)malloc(sizeof(char) * n + 1);
+	str = ft_strnew(n);
 	if (str == NULL)
 		return (NULL);
 	str = ft_strncpy(str, s, n);
@@ -52,8 +64,7 @@ char				**ft_strsplit(char const *s, char c)
 
 	i = 0;
 	k = 0;
-	tab = (char **)malloc(sizeof(char *) * (ft_cntwrd(s, c)) + 1);
-	if (tab == NULL)
+	if (!(tab = prelim_checks(s, c)))
 		return (NULL);
 	while (s[i])
 	{

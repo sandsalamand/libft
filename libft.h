@@ -6,7 +6,7 @@
 /*   By: sgrindhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/12 04:20:47 by sgrindhe          #+#    #+#             */
-/*   Updated: 2018/08/09 21:31:39 by sgrindhe         ###   ########.fr       */
+/*   Updated: 2018/08/09 22:38:09 by sgrindhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ t_2d_int_array		*ft_map_2d_int_array(t_2d_int_array *t_2darray,
 t_2d_int_array		*ft_2d_int_array(unsigned int width, unsigned int height);
 char				**ft_map_2d_char_array(char **array, char (*f)(char));
 char				**ft_2d_char_array(unsigned int width, unsigned int height);
+void				**ft_fuck_lists(t_list *lelist);
 
 #endif
