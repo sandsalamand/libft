@@ -6,7 +6,7 @@
 /*   By: sgrindhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/04 23:27:15 by sgrindhe          #+#    #+#             */
-/*   Updated: 2018/08/09 22:37:24 by sgrindhe         ###   ########.fr       */
+/*   Updated: 2018/08/12 01:40:52 by sgrindhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char			**prelim_checks(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	tab = (char **)malloc(sizeof(char *) * (ft_count_word(s, c)) + 1);
+	tab = (char **)malloc(sizeof(char *) * (ft_count_word(s, c) + 1));
 	if (tab == NULL)
 		return (NULL);
 	return (tab);

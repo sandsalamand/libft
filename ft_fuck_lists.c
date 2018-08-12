@@ -6,7 +6,7 @@
 /*   By: sgrindhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/09 21:39:48 by sgrindhe          #+#    #+#             */
-/*   Updated: 2018/08/09 22:36:37 by sgrindhe         ###   ########.fr       */
+/*   Updated: 2018/08/12 01:40:05 by sgrindhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	**ft_fuck_lists(t_list *lelist)
 {
 	void		**result;
 	size_t		i;
-	t_list		list_start;
+	t_list		*list_start;
 
 	if (!lelist)
 		return (0);
@@ -32,9 +32,9 @@ void	**ft_fuck_lists(t_list *lelist)
 		*result = list_start->content;
 	while (list_start->next)
 	{
-		*result++ = list_start->content;
+		(*result)++ = list_start->content;
 		free(list_start->content);
-		list_start = next;
+		list_start = list_start->next;
 	}
 	ft_memdel((void*)&list_start);
 	return (result);

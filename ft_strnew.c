@@ -6,7 +6,7 @@
 /*   By: sgrindhe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/09 11:18:12 by sgrindhe          #+#    #+#             */
-/*   Updated: 2018/08/05 23:23:17 by sgrindhe         ###   ########.fr       */
+/*   Updated: 2018/08/12 01:40:24 by sgrindhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnew(size_t size)
 	if (newstr == NULL)
 		return (NULL);
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		newstr[i] = '\0';
 		i++;
